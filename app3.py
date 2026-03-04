@@ -1,0 +1,143 @@
+import time
+# Mayusculas - numeros - caracteres esp. - longitud 8 caracteres
+
+"""mayusculas = False
+numeros = False
+caracteres = False
+simbolos = "@$_"
+print("Crea una contraseña con mayusculas - numeros - caracteres esp. - longitud 8 caracteres")
+
+while True:
+
+    contraseña = str(input("INGRESE SU CONTRASEÑA: "))
+    
+    if len(contraseña) > 8:
+        caracteres = True
+
+    for c in contraseña:
+        if c.isupper():
+            mayusculas = True
+        if c.isdigit():
+            numeros = True
+        if c in simbolos:
+            simbolos = True
+        
+
+    if mayusculas == True :
+        print("MAYUSCULAS = OK")
+    else:
+        print("MAYUSCULAS = NO")
+    if numeros == True:
+        print("NUMEROS = OK")
+    else:
+        print("NUMEROS = NO")
+    if caracteres == True:
+        print("CARACTERES = OK")
+    else:
+        print("CARACTERES = NO")
+    if simbolos == True:
+        print("SIMBOLOS = OK")
+    else:
+        print("SIMBOLOS = NO")
+
+    if (simbolos and caracteres and numeros and mayusculas) == True:
+        print("CREASTE UNA CONTRASEÑA CORRECTA")
+        break
+"""
+
+
+"""while True:
+    correo= str(input("Coloca tu correo: "))
+
+    correo_valido = None
+
+    partes = correo.split("@")    
+    dominio = partes[1].split(".")
+
+    if correo.startswith("@"):
+        correo_valido = False
+    if len(partes) != 2:
+        correo_valido = False
+    if len(dominio) < 2:
+        correo_valido = False
+
+    for part in partes + dominio:
+        if not partes:
+            correo_valido = False
+
+
+    if correo_valido == False:
+        print("Correo invalido, intente de nuevo") 
+    else:
+        print("Correo valido")
+        break
+"""
+
+
+carros_parqueadero = 5
+
+print("========================================")
+print("=========PARQUEADERO GONZALEZ ==========")
+print("========================================")
+
+while True:
+    try:
+        print("""\nLista de opciones:
+
+                1. Ingresar mi vehiculo
+                2. Sacar mi Vehiculo
+                3. Terminar programa""")
+
+
+
+        opción=int(input("\nEscoge una opción colocando solo el numero de la opción (1/2/3): "))
+        if opción == 1:
+            carros_parqueadero+=1
+            puestos_parqueadero = (10 - carros_parqueadero)
+            if carros_parqueadero<=10:
+                print("cargando...")
+                time.sleep(2)
+                print(f"Hay {carros_parqueadero} carros en el parqueadero, quedan {puestos_parqueadero} puestos")
+                time.sleep(2)
+            else:
+                print("cargando...")
+                time.sleep(2)
+                print("Capacidad maxima del parqueadero alcanzada. No puede ingresar su vehiculo")
+                time.sleep(2)
+
+            
+
+        elif opción == 2:
+            carros_parqueadero-=1
+            puestos_parqueadero = (10 - carros_parqueadero)
+            if carros_parqueadero>=0:
+                print("cargando...")
+                time.sleep(2)
+                print(f"Hay {carros_parqueadero} carros en el parqueadero, quedan {puestos_parqueadero} puestos")
+                time.sleep(2)
+                
+
+            else:
+                print("cargando...")
+                time.sleep(2)
+                print("No hay ningun carro en el parqueadero")
+                time.sleep(2)
+
+                
+        elif opción == 3:
+            print("¡Gracias por usar el programa!")
+            time.sleep(2)
+            break
+
+        else:
+            print("""\n=========================================================================
+    ========== ERROR: Escoge una opción correcta. solo (1 / 2 / 3) ==========
+    =========================================================================""")
+            print("")
+            time.sleep(4)
+            
+    except ValueError:
+         print("""\n    ===========================================================================
+    === ERROR: solo se permiten numeros! coloque solo el numero de la opcion ==
+    ===========================================================================""")
+         time.sleep(4)
