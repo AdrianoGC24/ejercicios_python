@@ -1,3 +1,4 @@
+import time
 # Mayusculas - numeros - caracteres esp. - longitud 8 caracteres
 
 """mayusculas = False
@@ -73,7 +74,7 @@ while True:
 """
 
 
-carros_parqueadero = 0
+carros_parqueadero = 5
 
 print("========================================")
 print("=========PARQUEADERO GONZALEZ ==========")
@@ -81,7 +82,7 @@ print("========================================")
 
 while True:
     try:
-        print("""Lista de opciones:
+        print("""\nLista de opciones:
 
                 1. Ingresar mi vehiculo
                 2. Sacar mi Vehiculo
@@ -94,21 +95,38 @@ while True:
             carros_parqueadero+=1
             puestos_parqueadero = (10 - carros_parqueadero)
             if carros_parqueadero<=10:
+                print("cargando...")
+                time.sleep(2)
                 print(f"Hay {carros_parqueadero} carros en el parqueadero, quedan {puestos_parqueadero} puestos")
+                time.sleep(2)
             else:
+                print("cargando...")
+                time.sleep(2)
                 print("Capacidad maxima del parqueadero alcanzada. No puede ingresar su vehiculo")
+                time.sleep(2)
+
             
 
-        if opción == 2:
+        elif opción == 2:
             carros_parqueadero-=1
             puestos_parqueadero = (10 - carros_parqueadero)
             if carros_parqueadero>=0:
+                print("cargando...")
+                time.sleep(2)
                 print(f"Hay {carros_parqueadero} carros en el parqueadero, quedan {puestos_parqueadero} puestos")
-            else:
-                print("No hay ningun carro en el parqueadero")
+                time.sleep(2)
                 
-        if opción == 3:
+
+            else:
+                print("cargando...")
+                time.sleep(2)
+                print("No hay ningun carro en el parqueadero")
+                time.sleep(2)
+
+                
+        elif opción == 3:
             print("¡Gracias por usar el programa!")
+            time.sleep(2)
             break
 
         else:
@@ -116,6 +134,10 @@ while True:
     ========== ERROR: Escoge una opción correcta. solo (1 / 2 / 3) ==========
     =========================================================================""")
             print("")
+            time.sleep(4)
             
     except ValueError:
-        print("ERROR: ¡solo numeros! coloque solo el numero de la opcion")
+         print("""\n    ===========================================================================
+    === ERROR: solo se permiten numeros! coloque solo el numero de la opcion ==
+    ===========================================================================""")
+         time.sleep(4)
