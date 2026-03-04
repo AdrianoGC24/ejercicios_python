@@ -45,7 +45,7 @@ while True:
 """
 
 
-while True:
+"""while True:
     correo= str(input("Coloca tu correo: "))
 
     correo_valido = None
@@ -70,4 +70,52 @@ while True:
     else:
         print("Correo valido")
         break
+"""
 
+
+carros_parqueadero = 0
+
+print("========================================")
+print("=========PARQUEADERO GONZALEZ ==========")
+print("========================================")
+
+while True:
+    try:
+        print("""Lista de opciones:
+
+                1. Ingresar mi vehiculo
+                2. Sacar mi Vehiculo
+                3. Terminar programa""")
+
+
+
+        opción=int(input("\nEscoge una opción colocando solo el numero de la opción (1/2/3): "))
+        if opción == 1:
+            carros_parqueadero+=1
+            puestos_parqueadero = (10 - carros_parqueadero)
+            if carros_parqueadero<=10:
+                print(f"Hay {carros_parqueadero} carros en el parqueadero, quedan {puestos_parqueadero} puestos")
+            else:
+                print("Capacidad maxima del parqueadero alcanzada. No puede ingresar su vehiculo")
+            
+
+        if opción == 2:
+            carros_parqueadero-=1
+            puestos_parqueadero = (10 - carros_parqueadero)
+            if carros_parqueadero>=0:
+                print(f"Hay {carros_parqueadero} carros en el parqueadero, quedan {puestos_parqueadero} puestos")
+            else:
+                print("No hay ningun carro en el parqueadero")
+                
+        if opción == 3:
+            print("¡Gracias por usar el programa!")
+            break
+
+        else:
+            print("""\n=========================================================================
+    ========== ERROR: Escoge una opción correcta. solo (1 / 2 / 3) ==========
+    =========================================================================""")
+            print("")
+            
+    except ValueError:
+        print("ERROR: ¡solo numeros! coloque solo el numero de la opcion")
