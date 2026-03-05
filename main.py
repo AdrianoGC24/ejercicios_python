@@ -14,6 +14,7 @@ except ValueError:
     print("solo puedes colocar numeros")
 """
     ##################################################
+
 import time
 
 print("""      ==========================================
@@ -78,6 +79,16 @@ try:
 
 except ValueError:
     print("Coloque el valor pedido, solo numeros o solo letras")
+
+#####################################################################
+"""texto = input("coloque su texto")
+invertido = ""
+
+for letra in texto:
+    invertido = letra + invertido
+
+
+print (invertido)"""
 
 
 
